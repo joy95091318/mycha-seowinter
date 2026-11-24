@@ -250,34 +250,18 @@
       margin-top: 8px;
     }
 
-    /* 表格樣式 */
-    .table-wrapper {
-      overflow-x: auto;
-      margin: 20px 0 32px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
+    /* 所有螢幕統一使用直向品項卡片 */
+    .flavor-cards { margin: 20px 0 32px; }
+    .flavor-card {
+      padding: 16px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
       font-size: 0.95rem;
     }
-
-    th, td {
-      padding: 14px 16px;
-      text-align: left;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    th {
-      background-color: var(--accent-soft);
-      color: var(--accent-warm);
-      font-weight: 700;
-    }
-
-    tr:hover {
-      background-color: #FAF7F2;
-    }
+    .flavor-card h3 { font-size: 1.05rem; margin: 0 0 8px; }
+    .flavor-card p { margin: 0; padding: 4px 0; }
+    .flavor-label { color: var(--accent-warm); font-weight: 500; white-space: nowrap; }
 
     /* 外送規則清單 */
     .delivery-list {
@@ -376,7 +360,6 @@
 
     h1, h2, h3 { text-wrap: pretty; }
     .drink-header h3 { word-break: keep-all; }
-    th:first-child, td:first-child { width: 25%; }
     footer a { white-space: nowrap; }
 
     @media (max-width: 600px) {
@@ -384,14 +367,6 @@
       .nav-container { padding: 12px 16px; }
       .nav-cta { padding: 8px 14px; }
       .article-tag { font-size: 0.875rem; }
-      .table-wrapper { overflow: visible; }
-      table, tbody { display: block; }
-      thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
-      tbody tr { display: block; padding: 16px; margin-bottom: 12px; border: 1px solid var(--border-color); border-radius: 10px; }
-      td, td:first-child { display: block; width: 100%; border: 0; padding: 4px 0; }
-      td:first-child { font-size: 1.05rem; margin-bottom: 4px; }
-      td:nth-child(2)::before { content: '口感：'; color: var(--accent-warm); font-weight: 500; }
-      td:nth-child(3)::before { content: '享用時機：'; color: var(--accent-warm); font-weight: 500; }
       .cta-box { padding: 24px 16px; }
       .cta-btn { padding: 12px 28px; }
       .faq-item { padding: 18px 16px; }
@@ -425,7 +400,7 @@
       <h1>冬季限定，12 月開賣</h1>
       
       <p class="lead-text">
-        東北季風吹起，麥寮的天氣一轉涼，下午茶或宵夜時段總想來點熱呼呼的飲品或甜湯暖胃。在地手搖品牌 MY CHA 推出冬季限定系列，預計於 <strong>12 月正式開賣</strong>，一次帶來 <strong>桂圓紅棗茶、薑汁奶茶、湯圓燒仙草、紅豆湯圓</strong> 四款暖心品項，無論你想在辦公室喝杯溫潤熱茶，還是想來碗料多飽足的紅白湯圓甜湯，都能在 MY CHA 一次滿足。
+        東北季風吹起，麥寮的天氣一轉涼，下午茶或宵夜時段總想來點熱呼呼的飲品或甜湯。在地手搖品牌 MY CHA 推出冬季限定系列，預計於 <strong>12 月正式開賣</strong>，一次帶來 <strong>桂圓紅棗茶、薑汁奶茶、湯圓燒仙草、紅豆湯圓</strong> 四款暖心品項，無論你想在辦公室喝杯溫潤熱茶，還是想來碗料多飽足的紅白湯圓甜湯，都能在 MY CHA 一次滿足。
       </p>
 
       <h2>四款冬季限定</h2>
@@ -440,10 +415,10 @@
         </div>
         <figure>
           <img src="桂圓紅棗茶.png" alt="麥寮冬季熱飲推薦 MY CHA 桂圓紅棗茶 琥珀色茶湯搭配龍眼乾與紅棗" loading="lazy">
-          <figcaption>琥珀色茶湯散發自然桂圓蜜香與紅棗果韻，微涼午後的無負擔暖心首選。</figcaption>
+          <figcaption>桂圓蜜香搭配紅棗果香，口感溫潤清甜。</figcaption>
         </figure>
         <p>
-          天氣剛轉涼時，最適合來一杯溫潤順口的桂圓紅棗茶。嚴選飽滿桂圓肉與紅棗慢火熬出清澈琥珀茶湯，入口先是桂圓特有的焦糖蜜香在舌尖化開，緊接著紅棗的溫厚果香緩緩釋放，喝起來清甜不膩口，尾韻帶著淡淡自然回甘。無咖啡因的溫和配方，無論是午後提神，還是下班回家想為自己留一段暖暖的休息時間都非常適合。
+          桂圓紅棗茶以桂圓的蜜香與紅棗的果香為特色，入口溫潤，尾韻清甜。喜歡果香與清甜口感的人，可以從這款開始選起。午後休息或下班後，搭配一份點心，享受自己的茶飲時光。
         </p>
       </section>
 
@@ -453,11 +428,11 @@
           <h3>2. 薑汁奶茶</h3>
         </div>
         <figure>
-          <img src="薑汁奶茶.png" alt="麥寮冬季奶茶推薦 MY CHA 薑汁奶茶 熱騰騰奶茶搭配新鮮老薑切片" loading="lazy">
-          <figcaption>醇厚奶茶交織現熬薑汁的溫柔微辛，冷風吹來時最能驅寒暖胃。</figcaption>
+          <img src="薑汁奶茶.png" alt="麥寮冬季奶茶推薦 MY CHA 薑汁奶茶 熱騰騰奶茶搭配薑切片" loading="lazy">
+          <figcaption>醇厚奶香交織薑汁微辛，口感滑順。</figcaption>
         </figure>
         <p>
-          想喝奶茶的濃郁滑順，又想在冷天裡驅走手腳冰冷？這杯薑汁奶茶完美平衡了醇與暖。第一口先感受到基底奶茶的圓潤厚實，緊接著薑汁的微微辛香在喉間溫柔散開，不嗆辣卻很有存在感，讓整杯熱奶茶喝起來層次豐富、絲毫不膩口。在麥寮海風吹拂的日子裡，點一杯熱騰騰的薑汁奶茶，讓雙手與胃袋一起暖起來。
+          薑汁奶茶將奶茶的醇厚與薑汁的微辛結合，入口先感受到奶香，接著是薑汁的辛香，讓熟悉的奶茶多了一層風味。喜歡奶茶，也想嘗試不同口味的人，可以在冬季下午茶時選擇這一杯。
         </p>
       </section>
 
@@ -468,10 +443,10 @@
         </div>
         <figure>
           <img src="湯圓燒仙草.png" alt="麥寮燒仙草推薦 MY CHA 湯圓燒仙草 滑嫩燒仙草搭配紅白小湯圓" loading="lazy">
-          <figcaption>溫熱滑順的燒仙草搭配軟糯 Q 彈的紅白小湯圓，雙重口感一次滿足。</figcaption>
+          <figcaption>滑順燒仙草搭配軟糯 Q 彈的紅白小湯圓。</figcaption>
         </figure>
         <p>
-          一碗就能同時享受滑順茶湯與軟糯咀嚼的雙重快樂！溫熱的燒仙草湯底帶著濃郁草本甘香，入口滑溜順喉；搭配一顆顆圓潤飽滿的紅白小湯圓，咬下去軟糯 Q 彈、越嚼越有純粹米香。每一湯匙都能舀到滑嫩仙草與彈牙湯圓的交織口感，飽足感十足，是冬至應景或下午嘴饞時的療癒首選。
+          湯圓燒仙草以仙草的草本香氣，搭配紅白小湯圓的軟糯口感。滑順湯底與帶有嚼勁的湯圓，讓每一口都有不同的層次。下午想吃點甜食，或冬至想來一份湯圓甜湯，都可以選擇這款。
         </p>
       </section>
 
@@ -482,46 +457,35 @@
         </div>
         <figure>
           <img src="紅豆湯圓.png" alt="麥寮甜湯推薦 MY CHA 紅豆湯圓 綿密紅豆湯搭配紅白湯圓" loading="lazy">
-          <figcaption>慢火熬煮至綿密鬆軟的飽滿紅豆，搭配現煮紅白湯圓，暖胃又飽足。</figcaption>
+          <figcaption>綿密紅豆搭配軟糯紅白湯圓，豆香與米香交融。</figcaption>
         </figure>
         <p>
-          冬季甜湯的經典不敗款！慢火熬煮至綿密鬆軟的紅豆，顆粒飽滿卻入口即化，湯頭濃郁香甜卻不過度厚重；搭配現煮軟糯、帶有微 Q 嚼勁的紅白小湯圓，綿密豆香與米香在口中完美融合。冷天裡不想自己開火煮甜湯，來上一碗暖呼呼的紅豆湯圓，瞬間治癒所有忙碌與疲憊。
+          紅豆湯圓將綿密的紅豆與軟糯的紅白小湯圓搭配在一起，豆香與米香相互交織。喜歡紅豆甜湯，也喜歡湯圓嚼感的人，可以選擇這款經典組合，作為飯後甜點或晚間點心。
         </p>
       </section>
 
       <h2>品項與口感</h2>
-      <div class="table-wrapper">
-        <table>
-          <thead>
-            <tr>
-              <th>冬季限定品項</th>
-              <th>口感特色</th>
-              <th>推薦享用時機</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>桂圓紅棗茶</strong></td>
-              <td>溫潤清甜、自然果香回甘</td>
-              <td>晚上怕睡不著、想喝無咖啡因熱飲</td>
-            </tr>
-            <tr>
-              <td><strong>薑汁奶茶</strong></td>
-              <td>奶香醇厚、尾韻微辛暖身</td>
-              <td>手腳冰冷、冷風天下午茶提神</td>
-            </tr>
-            <tr>
-              <td><strong>湯圓燒仙草</strong></td>
-              <td>仙草滑順、紅白湯圓 Q 彈</td>
-              <td>下午嘴饞想吃料、冬至應景甜湯</td>
-            </tr>
-            <tr>
-              <td><strong>紅豆湯圓</strong></td>
-              <td>紅豆綿密飽滿、湯圓軟糯</td>
-              <td>飯後甜點、需要飽足感的宵夜時光</td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="flavor-cards">
+        <section class="flavor-card">
+          <h3>桂圓紅棗茶</h3>
+          <p><span class="flavor-label">口感：</span>溫潤清甜、桂圓蜜香與紅棗果香</p>
+          <p><span class="flavor-label">享用時機：</span>午後休息、下班後搭配點心</p>
+        </section>
+        <section class="flavor-card">
+          <h3>薑汁奶茶</h3>
+          <p><span class="flavor-label">口感：</span>奶香醇厚、薑汁微辛</p>
+          <p><span class="flavor-label">享用時機：</span>冬季下午茶、想換換奶茶口味時</p>
+        </section>
+        <section class="flavor-card">
+          <h3>湯圓燒仙草</h3>
+          <p><span class="flavor-label">口感：</span>仙草滑順、紅白湯圓 Q 彈</p>
+          <p><span class="flavor-label">享用時機：</span>下午點心、冬至享用</p>
+        </section>
+        <section class="flavor-card">
+          <h3>紅豆湯圓</h3>
+          <p><span class="flavor-label">口感：</span>紅豆綿密、湯圓軟糯</p>
+          <p><span class="flavor-label">享用時機：</span>飯後甜點、晚間點心</p>
+        </section>
       </div>
 
       <h2>預訂與外送</h2>
